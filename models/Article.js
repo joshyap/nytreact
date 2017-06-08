@@ -11,6 +11,10 @@ var ArticleSchema = new Schema({
   url: {
     type: String
   }
+  // ,
+  // author: {
+  //   type: String
+  // },
 });
 
 var Article = mongoose.model("Article", ArticleSchema);

@@ -3,9 +3,12 @@
 import React from "react";
 
 // Here we include all of the sub-components
-var Search = require("./children/Search");
-var Results = require("./children/Results");
-var SavedArticles = require("./children/SavedArticles");
+// var Search = require("./children/Search");
+// var Results = require("./children/Results");
+// var SavedArticles = require("./children/SavedArticles");
+import Search from "./children/Search";
+import Results from "./children/Results";
+import SavedArticles from "./children/SavedArticles";
 
 // This is the main component
 class Main extends React.Component {
@@ -14,7 +17,7 @@ class Main extends React.Component {
   render() {
     return (
       <div className="container">
-          <div className="jumbotron">
+          <div className="jumbotron" style={styles.jumboStyle}>
             <h1 style={styles.h1}>New York Times</h1>
           </div>
             <div style={styles.font}>
@@ -30,10 +33,14 @@ class Main extends React.Component {
 const styles = {
   h1: {
     textAlign: "center",
-    fontFamily: 'Muli'
+    fontFamily: 'Muli',
+    color: "white"
   },
   font: {
     fontFamily: 'Muli'
+  },
+  jumboStyle: {
+    backgroundColor: "#337ab7"
   }
 };
 
