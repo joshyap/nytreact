@@ -1,7 +1,13 @@
 import React from "react";
 
-class Results extends React.Component {
-  render() {
+const Results = (props) => {
+  const saveArticle = (event) =>{
+    var index = event.target.name;
+    props.saveArticle(index);
+  }
+
+// class Results extends React.Component {
+  // render() {
     return(
       <div className="row">
         <div className="col-sm-12">
@@ -12,12 +18,24 @@ class Results extends React.Component {
               </h3>
             </div>
             <div className="panel-body">
+              {props.passedResults.map((article, i) => (
+                <div key={i} id={"result_"+(i+1)} className="well">
+                  <h2><span className="btn btn-primary">{i+1}</span> {article.headline.main}</h2>
+                  <p>{article.byline ? article.byline.original : "No Author"}</p>
+                  <p>{article.section_name}</p>
+                  <p>{article.pub_date}</p>
+                  <a href={article.web_url} target="_blank" >{article.web_url}</a>
+                  <br/>
+                  <button name={i} className="btn btn-primary" onClick={saveArticle}>Save Article</button>
+                </div>
+              ))
+              }
             </div>
           </div>
         </div>
       </div>
     )
   }
-}
+// }
 
 module.exports = Results;

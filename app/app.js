@@ -4,7 +4,12 @@ var ReactDOM = require("react-dom");
 
 // Include the Main Component
 // var Main = require("./components/Main");
-import Main from "./components/Main";
+// import Main from "./components/Main";
 
-// This code here allows us to render our main component (in this case Seymour)
-ReactDOM.render(<Main />, document.getElementById("app"));
+// grab the routes
+import routes from "./routes/htmlRoutes.js";
+
+// This code here allows us to render our main component
+// ReactDOM.render(<Main />, document.getElementById("app"));
+
+ReactDOM.render(routes, document.getElementById("app"));
